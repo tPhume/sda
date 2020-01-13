@@ -8,7 +8,7 @@ import java.awt.Graphics;
 */
 public class LayoutConstants {
 
-	public static final int xOffset = 350;
+	public static final int xOffset = 200;
 
 	public static final int yOffset = 30;
 

@@ -60,6 +60,7 @@ public class CourseData extends Observable {
 				i = courseData.size();
 			}
 		}
+
 		this.notifyObservers();
 	}
 

@@ -91,17 +91,9 @@ public class CourseController extends JPanel implements Observer, ChangeListener
 		sliders.add(slider);
 	}
 
-	/**
-	 * Informs this CourseController that a new course has been added
-	 * 
-	 * @param o
-	 *            the CourseData subject that has changed
-	 */
-	 public void update(Observable o) {
-		CourseData courses = (CourseData) o;
-		ArrayList<CourseRecord> newCourses = courses.getUpdate();
-		for (int i = sliders.size(); i < newCourses.size(); i++) {
-			this.addCourse((CourseRecord) newCourses.get(i));
+	 public void update(ArrayList<CourseRecord> courseRecords) {
+		for (int i = sliders.size(); i < courseRecords.size(); i++) {
+			this.addCourse(courseRecords.get(i));
 		}
 	} 
 

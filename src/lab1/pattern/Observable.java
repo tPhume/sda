@@ -41,9 +41,11 @@ public abstract class Observable {
 	 * Notify all Observers that Subject has changed
 	 */
 	public void notifyObservers() {
+		CourseData data = (CourseData) this;
+
 		for (int i = 0; i < observers.size(); i++) {
 			Observer observer = observers.get(i);
-			observer.update(this);
+			observer.update(data.getUpdate());
 		}
 	}
 

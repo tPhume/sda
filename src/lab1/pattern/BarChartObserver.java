@@ -39,7 +39,7 @@ public class BarChartObserver extends JPanel implements Observer {
 		super.paint(g);
 		LayoutConstants.paintBarChartOutline(g, this.courseData.size());
 		for (int i = 0; i < courseData.size(); i++) {
-			CourseRecord record = (CourseRecord) courseData.get(i);
+			CourseRecord record = courseData.get(i);
 			g.setColor(Color.blue);
 			g.fillRect(
 					LayoutConstants.xOffset + (i + 1)
@@ -60,16 +60,8 @@ public class BarChartObserver extends JPanel implements Observer {
 		}
 	}
 
-	/**
-	 * Informs this observer that the observed CourseData object has changed
-	 * 
-	 * @param o
-	 *            the observed CourseData object that has changed
-	 */
-	public void update(Observable o) {
-		CourseData data = (CourseData) o;
-		this.courseData = data.getUpdate();
-
+	public void update(ArrayList<CourseRecord> courseRecords) {
+		courseData = courseRecords;
 		this.setPreferredSize(new Dimension(2 * LayoutConstants.xOffset
 				+ (LayoutConstants.barSpacing + LayoutConstants.barWidth)
 				* this.courseData.size(), LayoutConstants.graphHeight + 2

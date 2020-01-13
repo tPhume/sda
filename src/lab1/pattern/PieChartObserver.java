@@ -9,6 +9,7 @@ public class PieChartObserver extends JPanel implements Observer {
         data.attach(this);
         this.courseData = data.getUpdate();
         this.setPreferredSize(new Dimension(2 * LayoutConstants.xOffset
+                + (LayoutConstants.barSpacing + LayoutConstants.barWidth)
                 * this.courseData.size(), LayoutConstants.graphHeight + 2
                 * LayoutConstants.yOffset));
         this.setBackground(Color.white);
@@ -37,15 +38,18 @@ public class PieChartObserver extends JPanel implements Observer {
                 double ratio = (data[i] / total) * 360.0;
                 //draw the arc
                 g.setColor(LayoutConstants.courseColours[i%LayoutConstants.courseColours.length]);
-                g.fillArc(LayoutConstants.xOffset, LayoutConstants.yOffset + 300, 2 * radius, 2 * radius, (int) startAngle, (int) ratio);
+                g.fillArc(LayoutConstants.xOffset, LayoutConstants.yOffset, 2 * radius, 2 * radius, (int) startAngle, (int) ratio);
                 startAngle += ratio;
             }
         }
     }
 
-    public void update(Observable o) {
-        CourseData data = (CourseData) o;
-        this.courseData = data.getUpdate();
+    public void update(ArrayList<CourseRecord> courseRecords) {
+        courseData = courseRecords;
+        this.setPreferredSize(new Dimension(2 * LayoutConstants.xOffset
+                + (LayoutConstants.barSpacing + LayoutConstants.barWidth)
+                * this.courseData.size(), LayoutConstants.graphHeight + 2
+                * LayoutConstants.yOffset));
         this.revalidate();
         this.repaint();
     }
