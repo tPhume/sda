@@ -3,7 +3,8 @@ package lab4.slot;
 public class WASlotComponentFactory implements SlotComponentFactory {
     private String type;
 
-    public WASlotComponentFactory(String type) {
+    @Override
+    public void setType(String type) {
         this.type = type;
     }
 

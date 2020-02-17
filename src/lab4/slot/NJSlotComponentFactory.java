@@ -3,7 +3,7 @@ package lab4.slot;
 public class NJSlotComponentFactory implements SlotComponentFactory {
     private String type;
 
-    public NJSlotComponentFactory(String type) {
+    public void setType(String type) {
         this.type = type;
     }
 

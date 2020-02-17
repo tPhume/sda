@@ -5,6 +5,7 @@ public class ProgressiveSlot extends Slot {
 	
 	public ProgressiveSlot(SlotComponentFactory componentFactory) {
 		this.componentFactory= componentFactory;
+		componentFactory.setType("progressive");
 	}
  
 	void build() {

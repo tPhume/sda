@@ -6,4 +6,5 @@ public interface SlotComponentFactory {
     public Display createDisplay();
 	public Gpu createGPU();
 	public Os createOS();
+	public void setType(String type);
 }
