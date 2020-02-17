@@ -6,7 +6,7 @@ public class OompaloompaBarfactory implements Factory {
     private OompaloompaBarfactory() {
     }
 
-    public Bar create(int id) {
+    public synchronized Bar create(int id) {
         Bar bar = new OompaloompaBar(counter++);
         System.out.println(id+ " creates new Oompaloompa bar created with id:" + counter);
         return bar;

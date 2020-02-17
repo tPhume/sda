@@ -6,7 +6,7 @@ public class WonkaBarFactory implements Factory {
 	private WonkaBarFactory() {
 	}
 	
-	public Bar create(int id) {
+	public synchronized Bar create(int id) {
 		Bar bar = new WonkaBar(counter++);
 		System.out.println(id+ " creates new Wonka bar created with id:" + counter);
 		return bar;
