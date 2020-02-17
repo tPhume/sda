@@ -1,3 +1,5 @@
+package lab4.singleton;
+
 public class WonkaBarFactory implements Factory {
 	private int counter=0;
 	

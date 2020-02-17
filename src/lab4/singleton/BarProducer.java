@@ -1,3 +1,4 @@
+package lab4.singleton;
 
 public class BarProducer extends Thread {
 	Factory wonka,oompaloompa;

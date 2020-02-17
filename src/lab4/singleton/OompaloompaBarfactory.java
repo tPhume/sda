@@ -1,3 +1,5 @@
+package lab4.singleton;
+
 public class OompaloompaBarfactory implements Factory {
     private int counter=0;
 

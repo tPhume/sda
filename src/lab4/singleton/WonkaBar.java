@@ -1,3 +1,4 @@
+package lab4.singleton;
 
 public class WonkaBar extends Bar {
 

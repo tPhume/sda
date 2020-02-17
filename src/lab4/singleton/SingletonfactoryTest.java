@@ -1,3 +1,5 @@
+package lab4.singleton;
+
 public class SingletonfactoryTest {
 	public static void main(String[] args) {
 		BarProducer t1 = new BarProducer(1);
