@@ -1,13 +1,12 @@
 import java.io.*;
-
 public class Omelette extends CookEgg {
-	public void prepareEggs() {
+	protected void prepareEggs() {
 		System.out.println("Stirring the eggs");
 	}
-	public void cook() {
+	protected void cook() {
 		System.out.println("Flipping the omelette while cooking");
 	}
-	void addCondiments() { System.out.println("Adding Salt and pepper into Omelette"); }
+	protected void addCondiments() { System.out.println("Adding Salt and pepper into Omelette"); }
 
 	public boolean customerWantsCondiments() {
 		String answer = getUserInput();

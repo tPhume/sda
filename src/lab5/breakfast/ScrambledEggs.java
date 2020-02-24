@@ -1,11 +1,8 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
+import java.io.*;
 public class ScrambledEggs extends CookEgg {
-	public void prepareEggs() { System.out.println("Stirring and adding milk to the eggs"); }
-	public void cook()  { System.out.println("Scrambling the eggs."); }
-	void addCondiments() { System.out.println("Adding Salt and pepper into ScrambledEggs"); }
+	protected void prepareEggs() { System.out.println("Stirring and adding milk to the eggs"); }
+	protected void cook()  { System.out.println("Scrambling the eggs."); }
+	protected void addCondiments() { System.out.println("Adding Salt and pepper into ScrambledEggs"); }
 
 	public boolean customerWantsCondiments() {
 		String answer = getUserInput();

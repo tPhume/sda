@@ -4,9 +4,9 @@ import java.io.InputStreamReader;
 
 public class SunnySide extends CookEgg {
 
-	public void prepareEggs() { System.out.println("Never stir sunny side up!"); }
-	public void cook() { System.out.println("Cooking the eggs sunny side up."); }
-	void addCondiments() { System.out.println("Adding Salt and pepper into SunnySide"); }
+	protected void prepareEggs() { System.out.println("Never stir sunny side up!"); }
+	protected void cook() { System.out.println("Cooking the eggs sunny side up."); }
+	protected void addCondiments() { System.out.println("Adding Salt and pepper into SunnySide"); }
 
 	public boolean customerWantsCondiments() {
 		String answer = getUserInput();
