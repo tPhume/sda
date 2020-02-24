@@ -1,31 +1,31 @@
-package lab5.breakfast;
+import java.io.*;
 
-import java.util.Scanner;
+public class Omelette extends CookEgg {
+	public void prepareEggs() {
+		System.out.println("Stirring the eggs");
+	}
+	public void cook() {
+		System.out.println("Flipping the omelette while cooking");
+	}
+	void addCondiments() { System.out.println("Adding Salt and pepper into Omelette"); }
 
-public class Omelette extends Breakfast {
-    public void crackEggs(int numOfEggs) {
-        System.out.println("Cracking " + numOfEggs + "eggs");
-    }
-
-    public void prepareEggs() {
-        System.out.println("Stirring the eggs");
-    }
-
-    public void cooking() {
-        System.out.println("Flipping the omelette while cooking");
-    }
-
-    public void serve() {
-        System.out.println("Putting the eggs on the plate");
-    }
-
-    @Override
-    boolean withSaltAndPepper() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("[Would you like some salt and pepper to go with your omelette?]: ");
-        String answer = scanner.nextLine();
-
-        return answer.equals("yes");
-    }
+	public boolean customerWantsCondiments() {
+		String answer = getUserInput();
+		if (answer.toLowerCase().startsWith("y")) { return true;}
+		else {return false;	}
+	}
+	private String getUserInput() {
+		String answer = null;
+		System.out.print("Would you like salt and pepper with your omelette (y/n)? ");
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			answer = in.readLine();
+		} catch (IOException ioe) {
+			System.err.println("IO error trying to read your answer");
+		}
+		if (answer == null) {
+			return "no";
+		}
+		return answer;
+	}
 }

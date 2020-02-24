@@ -1,31 +1,31 @@
-package lab5.breakfast;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-import java.util.Scanner;
+public class SunnySide extends CookEgg {
 
-public class SunnySide extends Breakfast {
-    public void crackEggs(int n) {
-        System.out.println("Cracking " + n + " eggs.");
-    }
+	public void prepareEggs() { System.out.println("Never stir sunny side up!"); }
+	public void cook() { System.out.println("Cooking the eggs sunny side up."); }
+	void addCondiments() { System.out.println("Adding Salt and pepper into SunnySide"); }
 
-    public void prepareEggs() {
-        System.out.println("Never stir sunny side up!");
-    }
+	public boolean customerWantsCondiments() {
+		String answer = getUserInput();
+		if (answer.toLowerCase().startsWith("y")) { return true;}
+		else {return false;	}
+	}
+	private String getUserInput() {
+		String answer = null;
+		System.out.print("Would you like salt and pepper with your SunnySide (y/n)? ");
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			answer = in.readLine();
+		} catch (IOException ioe) {
+			System.err.println("IO error trying to read your answer");
+		}
+		if (answer == null) {
+			return "no";
+		}
+		return answer;
+	}
 
-    public void cooking() {
-        System.out.println("Cooking the eggs sunny side up.");
-    }
-
-    public void serve() {
-        System.out.println("Placing the eggs on a plate");
-    }
-
-    @Override
-    boolean withSaltAndPepper() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("[Would you like some salt and pepper to go with your sunny side?]: ");
-        String answer = scanner.nextLine();
-
-        return answer.equals("yes");
-    }
 }
