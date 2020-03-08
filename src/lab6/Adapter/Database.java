@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Adapter;
+package lab6.Adapter;
 
 /**
  *
@@ -25,10 +25,16 @@ public class Database {
 
     public void addEmployee(Employee employee) {
         //Code to add employee
+        this.employees.add(employee);
     }
 
     public void deleteEmployee(long emp_num) {
         //Code to delete employee
+        for(int i = 0; i < employees.size(); i++){
+            if(emp_num == ((Employee) employees.get(i)).getEmpNum()){
+                employees.remove(i);
+            }
+        }
     }
 
 }

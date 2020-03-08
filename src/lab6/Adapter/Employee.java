@@ -3,17 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Adapter;
+package lab6.Adapter;
 
 /**
  *
  * @author boonjv
  */
-package Adapter;
-/**
- *
- * @author boonjv
- */
+
 public class Employee {
  
     private String name;
