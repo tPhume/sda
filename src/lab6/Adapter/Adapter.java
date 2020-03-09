@@ -1,39 +1,36 @@
 package lab6.Adapter;
 
-public class Adapter {
+import java.util.ArrayList;
+
+public class Adapter extends Records {
     Database database;
-    Records records;
 
     public Adapter(Database database) {
         this.database = database;
     }
 
-    public Adapter(Records records) {
-        this.records = records;
-    }
-
+    @Override
     public void insert(Employee employee) {
-        //Code to insert employee
-        this.employees.add(employee);
+        database.addEmployee(employee);
     }
 
+    @Override
     public void remove(long emp_num) {
-        //Code to remove employee
-        for(int i = 0; i < employees.size(); i++) {
-            if (emp_num == ((Employee) employees.get(i)).getEmpNum()) {
-                employees.remove(i);
-            }
-        }
+        database.deleteEmployee(emp_num);
     }
 
+    @Override
     public boolean isEmployee(long emp_num) {
-        //Code to find employee
-        for(int i = 0; i < employees.size(); i++) {
-            if (emp_num == ((Employee) employees.get(i)).getEmpNum()) {
+        for(int i = 0; i < database.getEmployees().size(); i++) {
+            if (emp_num == ((Employee) database.getEmployees().get(i)).getEmpNum()) {
                 return true;
             }
         }
         return false;
     }
 
+    @Override
+    public ArrayList getEmployees() {
+        return new ArrayList<>(database.getEmployees());
+    }
 }

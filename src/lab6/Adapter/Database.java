@@ -37,4 +37,7 @@ public class Database {
         }
     }
 
+    public Vector getEmployees() {
+        return employees;
+    }
 }
