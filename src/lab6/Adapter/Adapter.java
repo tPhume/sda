@@ -33,4 +33,15 @@ public class Adapter extends Records {
     public ArrayList getEmployees() {
         return new ArrayList<>(database.getEmployees());
     }
+
+    @Override
+    public String toString() {
+        String message =  "Adapter{" + "database=\n" ;
+        for (Object employee: database.getEmployees()){
+            employee = (Employee)employee;
+            message += ((Employee) employee).getEmpNum() + " Name: " + ((Employee) employee).getName() + " " + ((Employee) employee).getSurname()
+                    +" Salary: " + ((Employee) employee).getSalary() + "\n";
+        }
+        return message + "}";
+    }
 }

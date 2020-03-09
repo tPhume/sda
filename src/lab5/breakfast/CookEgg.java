@@ -1,3 +1,5 @@
+package lab5.breakfast;
+
 public abstract class CookEgg {
     final void prepareRecipie(int numOfEggs){
         crackEggs(numOfEggs);

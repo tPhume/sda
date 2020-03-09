@@ -1,3 +1,5 @@
+package lab5.breakfast;
+
 import java.io.*;
 public class Omelette extends CookEgg {
 	protected void prepareEggs() {

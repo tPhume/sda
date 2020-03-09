@@ -1,3 +1,5 @@
+package lab5.breakfast;
+
 import java.io.*;
 public class ScrambledEggs extends CookEgg {
 	protected void prepareEggs() { System.out.println("Stirring and adding milk to the eggs"); }

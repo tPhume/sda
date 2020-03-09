@@ -1,3 +1,4 @@
+package lab5.breakfast;
 
 public class EatBreakfast {
 	public static void main(String[] args) {
